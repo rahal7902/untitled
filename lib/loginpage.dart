@@ -1,10 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:untitled/main.dart';
-//
-// void main(){
-//   runApp(MaterialApp(home:Loginpage(),));  \\ void main ozhivakiyath nnammal samplillekk eduthu vechu
-// }
+import 'package:untitled/signuppage.dart';
+
 class Loginpage extends StatefulWidget{
   @override
   State<StatefulWidget> createState() =>LoginState();
@@ -76,8 +74,10 @@ class LoginState extends State<Loginpage> {
           ElevatedButton(style:ElevatedButton.styleFrom(backgroundColor: Colors.greenAccent,
               side: BorderSide(width: 1,color: Colors.green)),
               onPressed: (){}, child: Text('  Login  ')),
-SizedBox(height: 15,),
-          TextButton(onPressed:(){}, child: Text('Not a user? create an account')),
+          SizedBox(height: 15,),
+          TextButton(onPressed:(){
+            Navigator.push(context, MaterialPageRoute(builder: (context)=> Signuppage()));
+          }, child: Text('Not a user? create an account')),
         ],
       ),
     ),

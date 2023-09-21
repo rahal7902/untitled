@@ -1,13 +1,19 @@
 import 'dart:async';
 
+import 'package:device_preview/device_preview.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import 'loginpage.dart';
 
 void main(){
-  runApp(MaterialApp(home: MyApp(),
-      debugShowCheckedModeBanner:false
+  runApp(DevicePreview(
+    builder: (BuildContext context)=> MaterialApp(
+      useInheritedMediaQuery: true,
+      debugShowCheckedModeBanner:false,
+        home: MyApp(),
+    ),
   ));
 }
 class MyApp extends StatefulWidget{
@@ -18,7 +24,7 @@ class MyApp extends StatefulWidget{
 class _MyAppState extends State<MyApp> {
   @override
   void initState() {
-    Timer(Duration(seconds: 3), () {
+    Timer(Duration(seconds: 10), () {
       Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>Loginpage()));
     });
     super.initState();
@@ -34,7 +40,12 @@ class _MyAppState extends State<MyApp> {
         ),),
     body: Container(height: double.infinity,
       width: double.infinity,
-      color: Colors.blueGrey,
+      decoration: BoxDecoration(gradient: LinearGradient(colors: [
+        Colors.red,Colors.green,Colors.yellow,
+      ],begin: Alignment.bottomCenter,end: Alignment.centerLeft
+
+      )),
+
      child: Column(
        children: [
          Padding(
@@ -44,8 +55,17 @@ class _MyAppState extends State<MyApp> {
          Padding(
            padding: const EdgeInsets.only(top: 65),
            child: Text("Please wait while we are loading......",
-             style: TextStyle(color: Colors.yellow[600],fontSize: 25),),
-         )
+             style: GoogleFonts.lato(
+               textStyle: Theme.of(context).textTheme.displayLarge,
+               fontSize: 48,
+               fontWeight: FontWeight.w700,
+               fontStyle: FontStyle.italic,
+
+           ),
+             ),
+         ),
+         Text("hello world",
+         style: TextStyle(fontSize: 30,fontFamily: "Poppins",),),
        ],
      ),
     ),

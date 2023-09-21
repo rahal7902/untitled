@@ -1,11 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:untitled/loginpage.dart';
 
-void main(){
-  runApp(MaterialApp(home: Signuppage(),
-      debugShowCheckedModeBanner:false
-  ));
-}
+
 class Signuppage extends StatefulWidget{
   @override
   State<StatefulWidget> createState() =>Signupstate();
@@ -18,14 +15,13 @@ class Signupstate extends State<Signuppage>{
    return Scaffold(
      appBar: AppBar(leading: BackButton(),
        title: Text("Signup"),),
-     body: Container(
+     body: Container(decoration:
+     BoxDecoration(image: DecorationImage(
+         image: NetworkImage("https://as2.ftcdn.net/v2/jpg/04/44/54/37/1000_F_444543796_ToiOrJDAmBnbyFaUUm7GbTiDHECjWpwg.jpg"),fit: BoxFit.fill)),
        child: Column(
          children: [
-           SizedBox(height: 0,),
-           Center(child: Padding(
-             padding: const EdgeInsets.only(top: 1),
-             child: Image(image: AssetImage("assets/iconss/meals.png")),
-           )),
+           SizedBox(height: 10,),
+       Text("ZAM ZAM",style: TextStyle(fontSize: 40,fontStyle: FontStyle.italic,color: Colors.green),),
            SizedBox(height: 10,),
            Padding(
              padding: const EdgeInsets.only(left: 40,right: 40),
@@ -108,7 +104,10 @@ class Signupstate extends State<Signuppage>{
                onPressed: (){}, child: Text("Signup")),
            SizedBox(height: 5,),
            TextButton(style: TextButton.styleFrom(foregroundColor: Colors.lightGreen[700]),
-             onPressed:(){}, child: Text("already have an account? SignIn"),)
+             onPressed:(){
+             Navigator.push(context, MaterialPageRoute(builder: (context)=>Loginpage()));
+
+             }, child: Text("already have an account? SignIn"),)
 
          ],
        ),
