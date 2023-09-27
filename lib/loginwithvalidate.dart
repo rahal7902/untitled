@@ -50,8 +50,8 @@ class loginvalidatestate extends State<loginvalidate> {
                       )),
                   validator: (username) {
                     if (username!.isEmpty ||
-                        username!.contains("@") ||
-                        username.contains("."))
+                        !username.contains("@") ||
+                        !username.contains("."))
                       return "enter valid username";
                     else {
                       return null;
@@ -86,8 +86,7 @@ class loginvalidatestate extends State<loginvalidate> {
                             borderRadius: BorderRadius.circular(20))),
                     validator: (password) {
                       if (password!.isEmpty ||
-                          password!.contains("@") ||
-                          password.contains("."))
+                          password.length<8)
                         return "enter valid password";
                       else {
                         return null;

@@ -24,7 +24,7 @@ class _GridviewState extends State<Gridview> {
     return Scaffold(
       appBar: AppBar(title: Text("GRIDVIEW"),),
       body: GridView(
-        gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(maxCrossAxisExtent:200,
+        gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(maxCrossAxisExtent:50,
         crossAxisSpacing: 10,
         mainAxisSpacing: 20),
         children: [
