@@ -57,7 +57,7 @@ class Staggedgridview extends StatelessWidget{
          ),
          StaggeredGridTile.count(crossAxisCellCount: 1, mainAxisCellCount: 1,
              child: Card(color: Colors.orange,
-               child: Center(child: FaIcon(FontAwesomeIcons.faceAngry,size: 100,))))
+               child: Center(child: FaIcon(FontAwesomeIcons.faceAngry,size: 100,color: Colors.greenAccent,))))
        ],
        ),
      ),
